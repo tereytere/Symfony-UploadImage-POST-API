@@ -1,5 +1,5 @@
 ![image](https://user-images.githubusercontent.com/103147148/225964059-f79d1737-5fc3-41f6-99ab-0bfcc312e5b3.png)
-## Symfony POST API subir una imagen desde mi local
+# Symfony POST API subir una imagen desde mi local
 creación de una API POST que reciba una imágen
 
 # Requisitos
@@ -22,4 +22,4 @@ creación de una API POST que reciba una imágen
 # Rutas de la aplicación:
 |URL   | Descripción  | 
 |---|---|
-|/ImageUpload   | API post  |
+|/upload/image   | API post  |
