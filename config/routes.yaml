@@ -1,0 +1,9 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+api_my_profile_upload_image:
+    path: '/api/my-profile/{id}/upload-image'
+    controller: App\Controller\Api\MyProfileApiController::uploadImage
+    methods: ['POST']
+    requirements:
+        id: '\d+'

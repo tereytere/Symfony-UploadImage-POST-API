@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyProfile index{% endblock %}
+
+{% block body %}
+    <h1>MyProfile index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Image</th>
+                <th>UpdatedAt</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for my_profile in my_profiles %}
+            <tr>
+                <td>{{ my_profile.id }}</td>
+                <td><img class="foto" src="/my_profile/{{(my_profile.image)}}" alt="foto"></td>
+                {# <img class="logo-img" src="{{ asset('/my_profile/ADG.png') }}" alt="ADG Logo"/> #}
+                
+                <td>{{ my_profile.updatedAt ? my_profile.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_my_prof_show', {'id': my_profile.id}) }}">show</a>
+                    <a href="{{ path('app_my_prof_edit', {'id': my_profile.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_my_prof_new') }}">Create new</a>
+{% endblock %}

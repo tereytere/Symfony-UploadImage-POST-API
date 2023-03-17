@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MyProfile{% endblock %}
+
+{% block body %}
+    <h1>MyProfile</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ my_profile.id }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ my_profile.image }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ my_profile.updatedAt ? my_profile.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_my_prof_index') }}">back to list</a>
+
+    <a href="{{ path('app_my_prof_edit', {'id': my_profile.id}) }}">edit</a>
+
+    {{ include('my_prof/_delete_form.html.twig') }}
+{% endblock %}
