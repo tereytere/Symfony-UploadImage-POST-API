@@ -27,10 +27,6 @@ class MyProfile
      */
     private ?string $image = null;
 
-    // #[ORM\Column(length: 255, nullable: true)]
-
-    // private $imageFile;
-
     #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $updatedAt = null;
 
@@ -38,24 +34,6 @@ class MyProfile
     {
         return $this->id;
     }
-
-    // public function setImageFile(File $imageFile = null)
-    // {
-    //     $this->imageFile = $imageFile;
-
-    //     // VERY IMPORTANT:
-    //     // It is required that at least one field changes if you are using Doctrine,
-    //     // otherwise the event listeners won't be called and the file is lost
-    //     if (null !== $imageFile) {
-    //         // if 'updatedAt' is not defined in your entity, use another property
-    //         $this->updatedAt = new \DateTime('now');
-    //     }
-    // }
-
-    // public function getImageFile(): ?File
-    // {
-    //     return $this->imageFile;
-    // }
 
     public function getImage(): ?string
     {
