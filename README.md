@@ -1,1 +1,1 @@
-# Symfony POST API subir una imagen de mi local
+# Symfony POST API subir una imagen desde mi local
